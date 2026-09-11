@@ -1,0 +1,10 @@
+# Propriétaires par zones
+
+# Documentation
+*.md @maelaidibe-wq
+
+# Configuration GitHub
+/.github/ @acheraf942
+
+# Propriétaires par défaut
+* @maelaidibe-wq @acheraf942
