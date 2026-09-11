@@ -16,6 +16,13 @@ Thumbs.db
 # Logs
 *.log
 
+# Cache Python
+__pycache__/
+.venv/
+
 # Archives temporaires
 *.tmp
 *.bak
+
+# Dépendances Node
+node_modules/
