@@ -1,6 +1,10 @@
 # Propriétaires par zones
 
+# Fichiers Python
+*.py @acheraf942
+
 # Documentation
+README.md @maelaidibe-wq
 *.md @maelaidibe-wq
 
 # Configuration GitHub
