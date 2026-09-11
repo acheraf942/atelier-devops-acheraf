@@ -1,0 +1,21 @@
+# Secrets / config locale
+.env
+*.env.local
+*.key
+*.pem
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Archives temporaires
+*.tmp
+*.bak
