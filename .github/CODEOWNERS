@@ -1,5 +1,14 @@
-# Fichiers Python → acheraf942
+# Propriétaires par zones
+
+# Fichiers Python
 *.py @acheraf942
 
-# Documentation → maelaidibe-wq
+# Documentation
 README.md @maelaidibe-wq
+*.md @maelaidibe-wq
+
+# Configuration GitHub
+/.github/ @acheraf942
+
+# Propriétaires par défaut
+* @maelaidibe-wq @acheraf942
