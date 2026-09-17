@@ -20,9 +20,9 @@ jobs:
           python-version: "3.12"
 
       - name: Installer les dependances
-        working-directory: starter-app/starter-app2
+        working-directory: starter-app
         run: pip install -r requirements.txt
 
       - name: Lancer les tests
-        working-directory: starter-app/starter-app2
+        working-directory: starter-app
         run: pytest
