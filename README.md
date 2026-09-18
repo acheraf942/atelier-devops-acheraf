@@ -23,3 +23,37 @@ Test verification declencheur PR
 
 Gain : *(à compléter, en % ou en GB économisés)*
 
+## Séance 3 — Docker : build et lancement
+
+### Builder l'image seule
+```bash
+cd starter-app
+docker build -t atelier-devops-web:multistage .
+```
+
+### Lancer la stack complète (web + Redis)
+```bash
+docker compose up -d --build
+```
+L'application est accessible sur http://localhost:5004
+
+Endpoints disponibles :
+- `/health` — vérification de l'état du service
+- `/status` — informations sur le service
+- `/visits` — compteur de visites persistant (Redis)
+
+### Vérifier l'état des services
+```bash
+docker compose ps
+```
+Les deux services (`web` et `redis`) doivent afficher `healthy`.
+
+### Image publiée
+L'image est disponible publiquement sur Docker Hub :
+[acheraffal/atelier-devops-web](https://hub.docker.com/r/acheraffal/atelier-devops-web)
+
+```bash
+docker pull acheraffal/atelier-devops-web:v1.0.0
+```
+
+Tags disponibles : `v1.0.0`, `latest`
