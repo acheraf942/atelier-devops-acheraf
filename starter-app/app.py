@@ -1,3 +1,4 @@
+
 import os
 
 import redis
@@ -29,12 +30,20 @@ def sanitize_input(value):
 
 @app.route("/health")
 def health():
-    return jsonify(status="ok"), 200
+    try:
+        get_redis_client().ping()
+        return jsonify(status="ok"), 200
+    except redis.exceptions.RedisError:
+        return jsonify(status="error"), 503
 
 
 @app.route("/status")
 def status():
-    return jsonify(service="projet-devops-groupe-demo", version="1.0"), 200
+    return jsonify(
+        service="projet-devops-groupe-demo",
+        version="1.0",
+        deploy_color=os.environ.get("DEPLOY_COLOR", "unknown"),
+    ), 200
 
 
 @app.route("/visits")
