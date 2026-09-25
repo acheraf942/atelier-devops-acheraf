@@ -26,7 +26,7 @@ services:
     profiles: ["blue"]
     environment:
       - REDIS_HOST=redis
-      - DEPLOY_COLOR=blue
+      - NEW_COLOR=blue
     networks:
       - app-network
 
@@ -35,7 +35,7 @@ services:
     profiles: ["green"]
     environment:
       - REDIS_HOST=redis
-      - DEPLOY_COLOR=green
+      - NEW_COLOR=green
     networks:
       - app-network
 
