@@ -42,7 +42,7 @@ def status():
     return jsonify(
         service="projet-devops-groupe-demo",
         version="1.0",
-        deploy_color=os.environ.get("NEW_COLOR", "unknown"),
+        deploy_color=os.environ.get("DEPLOY_COLOR", "unknown"),
     ), 200
 
 
