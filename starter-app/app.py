@@ -36,6 +36,7 @@ def health():
     except redis.exceptions.RedisError:
         return jsonify(status="error"), 503
 
+
 @app.route("/status")
 def status():
     return jsonify(
