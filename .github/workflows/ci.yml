@@ -89,5 +89,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: deploy app 
-        run: .deploy/deploy.sh
+      - name: Rendre le script executable
+        run: chmod +x deploy/deploy.sh
+
+      - name: deploy app
+        run: ./deploy/deploy.sh
