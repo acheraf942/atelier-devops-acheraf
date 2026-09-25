@@ -26,3 +26,4 @@ __pycache__/
 
 # Dépendances Node
 node_modules/
+deploy/active_color.txt
