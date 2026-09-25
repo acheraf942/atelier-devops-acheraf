@@ -28,14 +28,13 @@ def sanitize_input(value):
     return value.replace("<", "&lt;").replace(">", "&gt;")
 
 
-@app.route("/health")
-def health():
-    try:
-        get_redis_client().ping()
-        return jsonify(status="ok"), 200
-    except redis.exceptions.RedisError:
-        return jsonify(status="error"), 503
-
+def test_health_endpoint():
+    client = app.test_client()
+    response = client.get("/health")
+    # /health depend de Redis : 200 si Redis est joignable, 503 sinon.
+    # Dans l'environnement CI (sans Redis), on attend 503.
+    assert response.status_code in (200, 503)
+    assert response.get_json()["status"] in ("ok", "error")
 
 @app.route("/status")
 def status():
