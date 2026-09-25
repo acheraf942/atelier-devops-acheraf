@@ -36,6 +36,7 @@ def test_health_endpoint():
     assert response.status_code in (200, 503)
     assert response.get_json()["status"] in ("ok", "error")
 
+
 @app.route("/status")
 def status():
     return jsonify(
