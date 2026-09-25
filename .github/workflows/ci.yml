@@ -89,8 +89,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Rendre le script executable
-        run: chmod +x deploy/deploy.sh
-
+      - name: Preparer l'etat initial (simulateur de prod)
+        run: |
+          chmod +x deploy/deploy.sh
+          docker compose -f docker-compose.blue-green.yml --profile blue up -d --build
+          sleep 10
       - name: deploy app
         run: ./deploy/deploy.sh
